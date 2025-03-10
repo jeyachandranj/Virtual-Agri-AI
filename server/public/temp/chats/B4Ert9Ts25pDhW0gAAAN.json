@@ -1,0 +1,12 @@
+[
+  {
+    "role": "user",
+    "content": "hi sir",
+    "audio": null
+  },
+  {
+    "role": "assistant",
+    "content": "Hello Candidate! Nice to meet you. I'm Master, the hiring officer. Let's get started with the technical round of the interview. Can you begin by telling me a little about yourself and why you're interested in this role?",
+    "audio": null
+  }
+]

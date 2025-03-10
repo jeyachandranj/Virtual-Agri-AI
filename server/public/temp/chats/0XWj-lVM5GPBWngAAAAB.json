@@ -1,0 +1,32 @@
+[
+  {
+    "role": "user",
+    "content": "hi sir",
+    "audio": "/home/jeyan/Project/Virtual-Agri-AI/client/public/temp/audio/1741600377171_nyqapr0z8l.wav"
+  },
+  {
+    "role": "assistant",
+    "content": "Hello! What brings you to this neck of the woods? Got a question about farming or agriculture? I'm all ears!",
+    "audio": "/home/jeyan/Project/Virtual-Agri-AI/client/public/temp/audio/1741600400498_29w53hu1g89.wav"
+  },
+  {
+    "role": "user",
+    "content": "\nwhat is machine learning",
+    "audio": null
+  },
+  {
+    "role": "assistant",
+    "content": "Machine learning? Well, that's a fascinating topic, but let's not get sidetracked! As an agricultural instructor, I'm more concerned with understanding the soil, crops, and farming practices. You know, \"A farmer is as good as his soil!\" But, if you're interested in machine learning's application in farming, I can tell you it's being used to analyze data on soil health, predict crop yields, and even optimize irrigation systems. However, let's focus on more practical farming advice! What's on your mind?",
+    "audio": null
+  },
+  {
+    "role": "user",
+    "content": "\nok sir",
+    "audio": null
+  },
+  {
+    "role": "assistant",
+    "content": "So, what's your question about farming or agriculture? Are you looking to start a new crop, or maybe you're having trouble with pests or diseases? I'm all ears!",
+    "audio": null
+  }
+]

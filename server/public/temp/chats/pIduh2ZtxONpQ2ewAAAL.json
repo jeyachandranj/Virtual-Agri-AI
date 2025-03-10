@@ -1,0 +1,22 @@
+[
+  {
+    "role": "user",
+    "content": "what is chatgpt",
+    "audio": "/home/jeyan/Project/Virtual-Agri-AI/client/public/temp/audio/1741603799103_6kwythgtf3m.wav"
+  },
+  {
+    "role": "assistant",
+    "content": "ChatGPT? Well, let me tell you, it's a new-fangled AI technology that can generate human-like text responses to questions and prompts. It's like having a super-smart computer that can talk to you and provide information on just about anything! But, as an old-school agricultural educator, I think it's important to remember that there's no substitute for good ol' fashioned human expertise and hands-on experience when it comes to farming.",
+    "audio": null
+  },
+  {
+    "role": "user",
+    "content": "\nhello",
+    "audio": null
+  },
+  {
+    "role": "assistant",
+    "content": "Hello there! Nice to chat with you! What's on your mind? Got a question about farming or agriculture? I'm all ears!",
+    "audio": null
+  }
+]

@@ -1,0 +1,12 @@
+[
+  {
+    "role": "user",
+    "content": "any 3 thirukural\n",
+    "audio": null
+  },
+  {
+    "role": "assistant",
+    "content": "Here are three Thirukkural couplets:\n\n1. எய்தல் உயர்வது என்றே தொல்லை;\nஅன்பின் உயர்வது கொடியை.\n\n(Eythal Uyirvadhu Endrae Thollai;\nAnpin Uyirvadhu Kodiyai)\n\nTranslation: \"Loss of temper is not as great as the loss of love.\"\n\n2. பிறர் பயன் பெற்று பிறர் வாழ்க்கையில்;\nஈடு நில்லாதொழில் செய்வது தொல்லை.\n\n(Pirar Payan Peruttu Pirar Vaazhkkaiyil;\nEedu Nilathu Ozhil Seyvathu Thollai)\n\nTranslation: \"Living for the benefit of others is not as great as living for one's own benefit.\"\n\n3. கருத்தான்மை வாழ்க்கையில் உயர்வாய்;\nகொடியை வென்றார் கொடியை போல்.\n\n(Karuththana Mai Vaazhkkaiyil Uyirvaa;\nKodiyaai Vendraar Kodiyaai Pol)\n\nTranslation: \"Wisdom is the greatest wealth, and one who has acquired it is like one who has conquered a kingdom.\"",
+    "audio": null
+  }
+]
