@@ -25,10 +25,10 @@ export const Experience1 = ({ response }) => {
   };
 
   const finalState = {
-    avatarPosition: [-0.8, -2.3, 6],
+    avatarPosition: [-0.8, -2, 6],
     avatarScale: 1.7,
-    deskPosition: [-0.9, -2.5, 5],
-    deskScale: 2,
+    deskPosition: [-0.8, -2, 6.2],
+    deskScale: 1.7,
     tablePosition: [-0.8, -1.5, 6],
     tableScale: 1.4,
     roomPosition: [-0.5, -1, 2],

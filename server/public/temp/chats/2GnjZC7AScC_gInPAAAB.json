@@ -1,0 +1,12 @@
+[
+  {
+    "role": "user",
+    "content": "hi sir",
+    "audio": null
+  },
+  {
+    "role": "assistant",
+    "content": "Hello there! What's on your mind regarding agriculture? Do you have a specific question about farming methods, crop growth, or perhaps something else?",
+    "audio": null
+  }
+]

@@ -90,7 +90,7 @@ def detect_disease():
     base64_image = base64.b64encode(image_bytes).decode('utf-8')
     
     try:
-        # Call Groq API with the improved prompt
+        # Call Groq API with the updated prompt
         chat_completion = client.chat.completions.create(
             messages=[
                 {
@@ -98,7 +98,7 @@ def detect_disease():
                     "content": [
                         {
                             "type": "text",
-                            "text": "Identify the plant/crop in this image, the specific disease affecting it, and provide a concise one-paragraph solution for treatment. Format your answer as: 'PLANT: [plant name], DISEASE: [disease name], SOLUTION: [one paragraph treatment solution]'"
+                            "text": "Identify the plant/crop in this image, the specific disease affecting it, provide a treatment solution, recommend pesticides, and explain why these pesticides are effective. Format your answer as: 'PLANT: [plant name], DISEASE: [disease name], SOLUTION: [treatment solution], PESTICIDES: [recommended pesticides], EXPLANATION: [why these pesticides are effective]'"
                         },
                         {
                             "type": "image_url",
@@ -115,17 +115,21 @@ def detect_disease():
         # Extract the response
         response = chat_completion.choices[0].message.content
         
-        # Parse the response to extract plant, disease, and solution
+        # Parse the response to extract all required information
         try:
-            plant = response.split('PLANT:')[1].split(',')[0].strip() if 'PLANT:' in response else ''
-            disease = response.split('DISEASE:')[1].split(',')[0].strip() if 'DISEASE:' in response else ''
-            solution = response.split('SOLUTION:')[1].strip() if 'SOLUTION:' in response else response
+            plant = response.split('PLANT:')[1].split('DISEASE:')[0].strip() if 'PLANT:' in response else ''
+            disease = response.split('DISEASE:')[1].split('SOLUTION:')[0].strip() if 'DISEASE:' in response else ''
+            solution = response.split('SOLUTION:')[1].split('PESTICIDES:')[0].strip() if 'SOLUTION:' in response else ''
+            pesticides = response.split('PESTICIDES:')[1].split('EXPLANATION:')[0].strip() if 'PESTICIDES:' in response else ''
+            explanation = response.split('EXPLANATION:')[1].strip() if 'EXPLANATION:' in response else ''
             
             return jsonify({
                 'success': True,
                 'plant': plant,
                 'disease': disease,
                 'solution': solution,
+                'pesticides': pesticides,
+                'explanation': explanation,
                 'full_response': response
             })
         except:
@@ -308,7 +312,6 @@ def get_commodities():
 if __name__ == '__main__':
     app.run(debug=True)
     CORS(app) 
-
 
 
 

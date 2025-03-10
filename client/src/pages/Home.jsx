@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { Bot, Globe, TrendingUp, Sprout, ChevronRight, Home, Settings, HelpCircle, LogOut } from 'lucide-react';
+import { Bot, Globe, TrendingUp, Sprout, ChevronRight, Hourglass,Tractor } from 'lucide-react';
 import TamilBot from "./TamilBot"
 import EnglishBot from "./EnglishBot"
 import Price from "./Price"
 import Crop from "./Crop"
+import Soil from "./Soil"
 
 const AgriDashboard = () => {
   const [activePage, setActivePage] = useState('agriTamilBot');
@@ -12,14 +13,13 @@ const AgriDashboard = () => {
     { id: 'agriTamilBot', name: 'Agri Tamil Bot', icon: <Bot size={20} />, path: '/tamil' },
     { id: 'agriEnglishBot', name: 'Agri English Bot', icon: <Globe size={20} />, path: '/english' },
     { id: 'priceSplit', name: 'Price Split', icon: <TrendingUp size={20} />, path: '/price-split' },
-    { id: 'cropPrediction', name: 'Crop Prediction', icon: <Sprout size={20} />, path: '/crop-prediction' },
+    { id: 'diseasesPrediction', name: 'Diseases Prediction', icon: <Sprout size={20} />, path: '/crop-prediction' },
+    { id: 'cropPrediction', name: 'Crop Prediction', icon: <Tractor size={20} />, path: '/soil-prediction' },
+    { id: 'selfLife', name: 'Self Life', icon: <Hourglass size={20} />, path: '/self-life' },
+
+
   ];
   
-  const secondaryMenuItems = [
-    { id: 'home', name: 'Dashboard', icon: <Home size={20} /> },
-    { id: 'settings', name: 'Settings', icon: <Settings size={20} /> },
-    { id: 'help', name: 'Help & Support', icon: <HelpCircle size={20} /> },
-  ];
   
   const handleNavigation = (pageId) => {
     setActivePage(pageId);
@@ -36,8 +36,12 @@ const AgriDashboard = () => {
         return <EnglishContent />;
       case 'priceSplit':
         return <PriceSplitContent />;
-      case 'cropPrediction':
+      case 'diseasesPrediction':
         return <CropPredictionContent />;
+      case 'cropPrediction':
+        return <SoilPredictionContent/>;
+      case 'selfLife':
+        return <SelfLife/>;
       default:
         localStorage.setItem('language', 'tamil');
         return <TamilContent />;
@@ -130,5 +134,23 @@ const CropPredictionContent = () => (
     </div>
   </div>
 );
+
+
+const SoilPredictionContent = () => (
+    <div className="p-8">
+      <div className="bg-white rounded-lg shadow-md p-6 max-w-4xl">
+        <Soil/>
+      </div>
+    </div>
+  );
+
+  const SelfLife = () => (
+    <div className="p-8">
+      <div className="bg-white rounded-lg shadow-md p-6 max-w-4xl">
+        <Soil/>
+      </div>
+    </div>
+  );
+  
 
 export default AgriDashboard;

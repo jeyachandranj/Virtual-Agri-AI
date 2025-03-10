@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Camera, Upload, RefreshCw, AlertCircle, Leaf, AlertTriangle, Sprout } from 'lucide-react';
+import { Camera, Upload, RefreshCw, AlertCircle, Leaf, AlertTriangle, Sprout, Shield, Info } from 'lucide-react';
 
 const PlantDiseaseDetector = () => {
   const [file, setFile] = useState(null);
@@ -82,16 +82,18 @@ const PlantDiseaseDetector = () => {
     setError(null);
   };
 
+  
+
   return (
     <div className="w-full min-h-screen bg-gradient-to-b from-green-50 to-blue-50">
-      <div className="max-w-3xl mx-auto p-4">
+      <div className="max-w-4xl mx-auto p-4">
         {/* Header */}
         <div className="text-center mb-6">
           <h1 className="text-3xl font-bold text-green-800 mb-2 flex items-center justify-center">
             <Leaf className="text-green-600 mr-2" size={32} />
             Plant Health Diagnosis
           </h1>
-          <p className="text-slate-600">Identify plant diseases and get treatment solutions instantly</p>
+          <p className="text-slate-600">Identify plant diseases and get comprehensive treatment solutions instantly</p>
         </div>
         
         {/* Main Content */}
@@ -136,7 +138,7 @@ const PlantDiseaseDetector = () => {
             </div>
           ) : (
             <div className="p-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {/* Image Preview */}
                 <div className="border border-gray-200 rounded-xl overflow-hidden bg-white shadow-md">
                   <div className="p-4 border-b border-gray-200 bg-gray-50 flex justify-between items-center">
@@ -176,8 +178,8 @@ const PlantDiseaseDetector = () => {
                   </div>
                 </div>
                 
-                {/* Results Section */}
-                <div className="border border-gray-200 rounded-xl overflow-hidden bg-white shadow-md">
+                {/* Results Section - Now spans 2 columns */}
+                <div className="border border-gray-200 rounded-xl overflow-hidden bg-white shadow-md md:col-span-2">
                   <div className="p-4 border-b border-gray-200 bg-gray-50">
                     <h3 className="font-medium text-gray-800">Diagnosis Results</h3>
                   </div>
@@ -210,24 +212,55 @@ const PlantDiseaseDetector = () => {
                     
                     {result && (
                       <div className="space-y-4">
-                        {result.plant && (
-                          <div className="bg-green-50 border border-green-100 rounded-lg p-4">
-                            <h3 className="font-semibold text-green-800 mb-1">Plant Identified</h3>
-                            <p className="text-green-700">{result.plant}</p>
-                          </div>
-                        )}
-                        
-                        {result.disease && (
-                          <div className="bg-orange-50 border border-orange-100 rounded-lg p-4">
-                            <h3 className="font-semibold text-orange-800 mb-1">Disease Detected</h3>
-                            <p className="text-orange-700">{result.disease}</p>
-                          </div>
-                        )}
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                          {result.plant && (
+                            <div className="bg-green-50 border border-green-100 rounded-lg p-4">
+                              <div className="flex items-center mb-2">
+                                <Leaf className="h-5 w-5 text-green-600 mr-2" />
+                                <h3 className="font-semibold text-green-800">Plant Identified</h3>
+                              </div>
+                              <p className="text-green-700">{result.plant}</p>
+                            </div>
+                          )}
+                          
+                          {result.disease && (
+                            <div className="bg-orange-50 border border-orange-100 rounded-lg p-4">
+                              <div className="flex items-center mb-2">
+                                <AlertTriangle className="h-5 w-5 text-orange-600 mr-2" />
+                                <h3 className="font-semibold text-orange-800">Disease Detected</h3>
+                              </div>
+                              <p className="text-orange-700">{result.disease}</p>
+                            </div>
+                          )}
+                        </div>
                         
                         {result.solution && (
                           <div className="bg-blue-50 border border-blue-100 rounded-lg p-4">
-                            <h3 className="font-semibold text-blue-800 mb-1">Recommended Solution</h3>
+                            <div className="flex items-center mb-2">
+                              <Info className="h-5 w-5 text-blue-600 mr-2" />
+                              <h3 className="font-semibold text-blue-800">Recommended Solution</h3>
+                            </div>
                             <p className="text-blue-700">{result.solution}</p>
+                          </div>
+                        )}
+                        
+                        {result.pesticides && (
+                          <div className="bg-purple-50 border border-purple-100 rounded-lg p-4">
+                            <div className="flex items-center mb-2">
+                              <Shield className="h-5 w-5 text-purple-600 mr-2" />
+                              <h3 className="font-semibold text-purple-800">Recommended Pesticides</h3>
+                            </div>
+                            <p className="text-purple-700">{result.pesticides}</p>
+                          </div>
+                        )}
+                        
+                        {result.explanation && (
+                          <div className="bg-teal-50 border border-teal-100 rounded-lg p-4">
+                            <div className="flex items-center mb-2">
+                              <Info className="h-5 w-5 text-teal-600 mr-2" />
+                              <h3 className="font-semibold text-teal-800">Why These Pesticides Work</h3>
+                            </div>
+                            <p className="text-teal-700">{result.explanation}</p>
                           </div>
                         )}
                         
@@ -244,8 +277,6 @@ const PlantDiseaseDetector = () => {
               </div>
             </div>
           )}
-          
-         
         </div>
       </div>
     </div>

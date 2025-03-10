@@ -1,0 +1,22 @@
+[
+  {
+    "role": "user",
+    "content": "hi",
+    "audio": "/home/jeyan/Project/Virtual-Agri-AI/client/public/temp/audio/1741608749320_8lchm8e74b.wav"
+  },
+  {
+    "role": "assistant",
+    "content": "வணக்கம்! (Hello!) I'm an experienced agricultural education instructor with 40 years of experience in the field. I'm here to help you with any farming-related questions you may have. What's on your mind? Do you have a specific query about farming methods, crop growth, fertilizers, water management, or pest control? Let's chat!",
+    "audio": null
+  },
+  {
+    "role": "user",
+    "content": "tomoto\n",
+    "audio": null
+  },
+  {
+    "role": "assistant",
+    "content": "தக்காளி (Tomatoes)! அவற்றை வளர்க்க என்ன செய்யலாம்? (What can you do to grow tomatoes?)\n\nFirst, மண்ணைச் சிறந்த நிலையில் இருக்கணும் (loamy soil is a must). pH 6.0 to 7.0 இடைமையா இருக்கணும் (pH level should be between 6.0 to 7.0). நீரோட்டம் சரியாக இருக்கணும், நீர் தேங்கிக்கிடக்கக் கூடாது (water should be well-drained, and not waterlogged).\n\n✔️ உரம் போட்டுப் பண்படுத்தணும் (fertilize wisely). நீங்க 1 ஏக்கருக்கு 10-12 டன் மாட்டுசாணம், 3-5 டன் உயிர்ச்சத்து உரம் போடலாம் (for 1 acre, you might need to apply 10-12 tons of cow dung compost, 3-5 tons of chicken manure).\n\n✔️ நீர் மேலாண்மையா இருந்தா, நல்ல மகசூல் கிடைக்கும் (proper water management ensures healthy yields).\n\nThese are some basic guidelines for growing tomatoes. Do you have any specific questions or concerns?",
+    "audio": null
+  }
+]

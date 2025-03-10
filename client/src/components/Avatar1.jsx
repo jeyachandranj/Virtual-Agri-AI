@@ -3,19 +3,11 @@ import { useFrame } from "@react-three/fiber";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import * as THREE from "three";
 
-// Only include sitting animations
+// Only include sitting idle and talking animations
 const animationFiles = {
   "Sitting Idle": "/animations/Sitting Idle.fbx",
   "Sitting Talking": "/animations/Sitting Talking.fbx",
-  "Sitting Meeting": "/animations/Having A Meeting.fbx",
-  "Sitting Clap": "/animations/Sitting Clap.fbx",
-  "Sitting Disapproval": "/animations/Sitting Disapproval.fbx",
-  "Sitting Thumbs Up": "/animations/Sitting Thumbs Up.fbx",
-  "Sitting Victory": "/animations/Sitting Victory.fbx",
 };
-
-// Animations for talking while seated
-const sittingTalkingAnimations = ["Sitting Talking", "Sitting Meeting"];
 
 // Preload animations
 Object.values(animationFiles).forEach((url) => {
@@ -76,7 +68,7 @@ export function Avatar1(props) {
   const [animation, setAnimation] = useState("Sitting Idle");
   const group = useRef();
 
-  // Load all sitting animations
+  // Load sitting idle and talking animations
   const animations = useMemo(() => {
     let anims = [];
     Object.entries(animationFiles).forEach(([name, path]) => {
@@ -161,8 +153,8 @@ export function Avatar1(props) {
 
     if (playAudio && audio.src) {
       audio.play();
-      // Choose a random sitting talking animation
-      setAnimation(sittingTalkingAnimations[Math.floor(Math.random() * sittingTalkingAnimations.length)]);
+      // Set to Sitting Talking when audio plays
+      setAnimation("Sitting Talking");
       audio.addEventListener('ended', handleAudioEnd);
       
       return () => {
@@ -194,39 +186,6 @@ export function Avatar1(props) {
     }
   });
 
-  // Function to handle emotion animations (all sitting)
-  const selectEmotionAnimation = () => {
-    const emotions = [  "agree", "disagree"];
-    const randomEmotion = emotions[Math.floor(Math.random() * emotions.length)];
-
-    switch (randomEmotion) {
-      case "happy":
-        setAnimation("Sitting Thumbs Up");
-        break;
-      case "excited":
-        setAnimation("Sitting Victory");
-        break;
-      case "agree":
-        setAnimation("Sitting Clap");
-        break;
-      case "disagree":
-        setAnimation("Sitting Disapproval");
-        break;
-      default:
-        setAnimation(sittingTalkingAnimations[Math.floor(Math.random() * sittingTalkingAnimations.length)]);
-    }
-
-    // Revert back to a sitting talking animation after 3 seconds
-    setTimeout(() => {
-      setAnimation(sittingTalkingAnimations[Math.floor(Math.random() * sittingTalkingAnimations.length)]);
-    }, 3000);
-  };
-
-  useEffect(() => {
-    const interval = setInterval(selectEmotionAnimation, 20000); // Call every 20 seconds
-
-    return () => clearInterval(interval); // Cleanup interval on unmount
-  }, []);
   return (
     <group {...props} dispose={null} ref={group}>
       <primitive object={nodes.Hips} />

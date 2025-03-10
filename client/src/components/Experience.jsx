@@ -13,7 +13,7 @@ export const Experience = ({ response }) => {
   const newHeight = viewport.height * 3;
 
   const initialState = {
-    avatarPosition: [-2, -2, 2],
+    avatarPosition: [-2, -2.9, 2],
     avatarScale: 1,
     deskPosition: [-2, -2, 2],
     deskScale: 1,
